@@ -18,6 +18,8 @@ class MyEventEmitter {
       listener(...args);
     };
 
+    onceWrapper._original = listener;
+
     this.on(eventName, onceWrapper);
   }
   off(eventName, listener) {
